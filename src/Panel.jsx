@@ -10,10 +10,22 @@ var Panel = React.createClass({
   mixins: [BootstrapMixin, CollapsableMixin],
 
   propTypes: {
+    defaultExpanded: React.PropTypes.bool,
     onSelect: React.PropTypes.func,
     header: React.PropTypes.node,
     footer: React.PropTypes.node,
     eventKey: React.PropTypes.any
+  },
+
+  getInitialState: function(){
+    var defaultExpanded = this.props.defaultExpanded != null
+      ? this.props.defaultExpanded
+      : this.props.expanded != null
+        ? this.props.expanded
+        : false;
+    return {
+      expanded: defaultExpanded
+    }
   },
 
   getDefaultProps: function () {
@@ -23,22 +35,29 @@ var Panel = React.createClass({
     };
   },
 
-  handleSelect: function (e) {
-    if (this.props.onSelect) {
-      this._isChanging = true;
-      this.props.onSelect(this.props.eventKey);
-      this._isChanging = false;
+  handleSelect: function(e){
+    if(this.props.onSelect) {
+      this.props.onSelect(e, this.props.eventKey)
+    } else {
+      this.handleClickEvent(e);
+      this.handleToggle();
     }
-
-    e.preventDefault();
-
-    this.setState({
-      expanded: !this.state.expanded
-    });
   },
 
-  shouldComponentUpdate: function () {
-    return !this._isChanging;
+  handleClickEvent: function(e){
+    e.preventDefault();
+  },
+
+  handleToggle: function(){
+    this.setState({expanded:!this.state.expanded});
+  },
+
+  componentDidUpdate: function(prevProps, prevState){
+    var wasExpanded = prevProps.expanded != null ? prevProps.expanded : prevState.expanded;
+    var isExpanded = this.isExpanded();
+    if(wasExpanded != isExpanded){
+      this.internalToggle();
+    }
   },
 
   getCollapsableDimensionValue: function () {
@@ -51,6 +70,10 @@ var Panel = React.createClass({
     }
 
     return this.refs.panel.getDOMNode();
+  },
+
+  isExpanded: function(){
+    return this.props.expanded != null ? this.props.expanded : this.state.expanded;
   },
 
   render: function () {
