@@ -1,35 +1,69 @@
-# react-bootstrap
+# React-Bootstrap
 
-[Bootstrap 3](http://getbootstrap.com) components built with [React](http://facebook.github.io/react/)
+[![Travis CI Build status][travis-badge]][travis-link]
+[![Appveyor Build status][appveyor-badge]][appveyor-link]
+[![npm][npm-badge]][npm]
 
-[![Build Status](https://travis-ci.org/react-bootstrap/react-bootstrap.svg)](https://travis-ci.org/react-bootstrap/react-bootstrap) [![NPM version](https://badge.fury.io/js/react-bootstrap.svg)](http://badge.fury.io/js/react-bootstrap) [![Bower version](https://badge.fury.io/bo/react-bootstrap.svg)](http://badge.fury.io/bo/react-bootstrap) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/react-bootstrap/react-bootstrap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[Bootstrap 4][bootstrap] components built with [React][react].
 
-Under active development - APIs will change.
+[![Codecov][codecov-badge]][codecov]
+[![Discord][discord-badge]][discord]
+[![Thinkful][thinkful-badge]][thinkful]
 
 ## Docs
 
-A [docs site](http://react-bootstrap.github.io) with live editable examples is a work in progress
+See the [documentation][documentation] with live editable examples and API documention.
 
-### Bootstrap Version
+To find the documentation for the latest Bootstrap 3 compatible release, [go here](https://5c507d49471426000887a6a7--react-bootstrap.netlify.com/).
 
-Currently supports v3.2.0, but v3.3+ support is coming soon.
+### Migrating from Bootstrap 3 to Bootstrap 4
 
-## Authors
-
-- [Stephen J. Collings](https://github.com/stevoland)
-- [Pieter Vanderwerff](https://github.com/pieterv)
-
-and many [contributors](https://github.com/react-bootstrap/react-bootstrap/graphs/contributors)
+If you would like to update React-Bootstrap within an existing project to use Bootstrap 4, please read our docs for **[migrating to React-Bootstrap V1](https://react-bootstrap.github.io/migrating/)**.
 
 ## Related modules
 
-- [react-router-bootstrap](https://github.com/mtscout6/react-router-bootstrap) - Integration with [react-router](https://github.com/rackt/react-router).
+- [react-router-bootstrap][react-router-bootstrap] – Integration with [React Router][react-router]
+- [Awesome React Bootstrap Components][awesome-react-bootstrap-components] - Additional components like off-canvas navbar, switch and sliders.
+
+## Local setup
+
+Yarn is our package manager of choice here. Check out setup
+instructions [here](https://yarnpkg.com/en/docs/install) if you don't have it installed already.
+After that you can run `yarn run bootstrap` to install all the needed dependencies.
+
+From there you can:
+
+- Run the tests once with `yarn test` (Or run them in watch mode with `yarn run tdd`).
+- Start a local copy of the docs site with `yarn start`
+- Or build a local copy of the library with `yarn run build`
+
+## CodeSandbox Examples
+
+[Click here](https://github.com/react-bootstrap/code-sandbox-examples) to explore some React-Bootstrap [CodeSandbox](https://codesandbox.io/) examples.
+
+[Click here](https://codesandbox.io/s/github/react-bootstrap/code-sandbox-examples/tree/master/basic) to automatically open [CodeSandbox](https://codesandbox.io/) with the React-Bootstrap [CodeSandbox Examples GitHub Repository](https://github.com/react-bootstrap/code-sandbox-examples) as a workspace.
 
 ## Contributions
 
-Yes please!
+Yes please! See the [contributing guidelines][contributing] for details.
 
-- Run `npm install`, `npm run test-watch` to run tests while you develop (however this hides any build errors, you can see these with `grunt build`)
-- Add tests for any new or changed functionality
-- See [issues](https://github.com/stevoland/react-bootstrap/issues) for some ideas
-- Follow existing style
+[bootstrap]: https://getbootstrap.com/
+[react]: https://reactjs.org/
+[documentation]: https://react-bootstrap.github.io/
+[contributing]: CONTRIBUTING.md
+[travis-badge]: https://travis-ci.org/react-bootstrap/react-bootstrap.svg?branch=master
+[travis-link]: https://travis-ci.org/react-bootstrap/react-bootstrap
+[appveyor-badge]: https://ci.appveyor.com/api/projects/status/ylitpyo6n5yq1s6i?svg=true
+[appveyor-link]: https://ci.appveyor.com/project/react-bootstrap/react-bootstrap
+[npm-badge]: https://badge.fury.io/js/react-bootstrap.svg
+[npm]: http://badge.fury.io/js/react-bootstrap
+[react-router-bootstrap]: https://github.com/react-bootstrap/react-router-bootstrap
+[react-router]: https://github.com/reactjs/react-router
+[react-bootstrap-extended]: https://github.com/rbalicki2/react-bootstrap-extended
+[awesome-react-bootstrap-components]: https://github.com/Hermanya/awesome-react-bootstrap-components
+[thinkful-badge]: https://tf-assets-staging.s3.amazonaws.com/badges/thinkful_repo_badge.svg
+[thinkful]: http://start.thinkful.com/react/?utm_source=github&utm_medium=badge&utm_campaign=react-bootstrap
+[codecov-badge]: https://img.shields.io/codecov/c/github/react-bootstrap/react-bootstrap/master.svg
+[codecov]: https://codecov.io/gh/react-bootstrap/react-bootstrap
+[discord-badge]: https://img.shields.io/badge/Discord-Join%20chat%20%E2%86%92-738bd7.svg
+[discord]: https://discord.gg/0ZcbPKXt5bXLs9XK
